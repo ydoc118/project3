@@ -1,6 +1,6 @@
 # React-Portfolio
 [![License: Apache](https://img.shields.io/badge/License-Apache2.0-green.svg)](https://opensource.org/licenses/Apache)
-[![LanguageCount](https://img.shields.io/github/languages/count/ram-sah/portfolio)](https://github.com/ram-sah/portfolio)
+[![LanguageCount](https://img.shields.io/github/languages/count/ram-sah/portfolio)](https://github.com/ydoc118/project3)
 
 ## Description: 
 
