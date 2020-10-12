@@ -1,6 +1,6 @@
-# React-Portfolio
-[![License: Apache](https://img.shields.io/badge/License-Apache2.0-green.svg)](https://opensource.org/licenses/Apache)
-[![LanguageCount](https://img.shields.io/github/languages/count/ram-sah/portfolio)](https://github.com/ydoc118/project3)
+# Project-3:
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![LanguageCount](https://img.shields.io/github/languages/count/ydoc118/project3)](https://github.com/ydoc118/project3)
 
 ## Description: 
 
@@ -16,7 +16,7 @@
 * [Demo](#Demo)
 
 ## License
-* Apache License
+* MIT
 
 ## Questions
             
