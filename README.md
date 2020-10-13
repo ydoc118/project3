@@ -1,6 +1,6 @@
-# React-Portfolio
+# React: Project-3
 [![License: Apache](https://img.shields.io/badge/License-Apache2.0-green.svg)](https://opensource.org/licenses/Apache)
-[![LanguageCount](https://img.shields.io/github/languages/count/ram-sah/portfolio)](https://github.com/ydoc118/project3)
+[![LanguageCount](https://img.shields.io/github/languages/count/ydoc118/project3)](https://github.com/ydoc118/project3)
 
 ## Description: 
 
