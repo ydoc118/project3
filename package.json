@@ -8,7 +8,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node seeders/seed.js",
+    "seed": "node seeders/seed.js && node seeders/veteranSeed.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
@@ -27,6 +27,9 @@
     "eslint": "^7.11.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.10.9"
+    "mongoose": "^5.10.9",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1"
   }
 }
