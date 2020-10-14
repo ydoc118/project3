@@ -1,3 +1,4 @@
 module.exports = {
-    Discount: require("./discounts")
+    Discount: require("./discounts"),
+    Veteran: require("./veteran")
 };

@@ -304,7 +304,7 @@ const discountSeed = [
     Category: "Retail",
     business: "Abercrombie & Fitch",
     description: "10-15% off, at manager’s discretion",
-    discount: "10% - 15%"
+    discount: "10%"
   },
   {
     Category: "Retail",
