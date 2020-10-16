@@ -5,11 +5,21 @@ module.exports = {
         db.Discount
           .find(req.query)
           .then((dbModel) => {
-              console.log(dbModel)
               return res.json(dbModel)
             })
     },
-    test: function(req, res) {
-        console.log("test")
+    findOne: function(req, res) {
+        db.Discount
+          .findById(req.params.id)
+          .then(dbModel => {
+              return res.json(dbModel)
+          })
+    },
+    findCategories: function(req, res) {
+        db.CategoryModel
+          .find(req.query)
+          .then((dbModel) => {
+              return res.json(dbModel)
+          })
     }
 }
