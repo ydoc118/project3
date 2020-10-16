@@ -1,9 +1,14 @@
 import axios from "axios";
-require('dotenv').config();
 
 export default {
-  getBusinesses: function () {
+  getCategories: function() {
+    return axios.get("/api/categories")
+  },
+  getBusinesses: function() {
     return axios.get("/api/businesses");
+  },
+  getBusiness: function(id) {
+    return axios.get("/api/businesses/" + id)
   }
 }
 
