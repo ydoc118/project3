@@ -1,18 +1,17 @@
-import React, { useState, useEffect, Children } from "react";
+import React, { useState, useEffect } from "react";
+import {useParams} from "react-router-dom";
 import API from "../utils/API";
-import {BusinessListItem, BusinessList} from "../components/BusinessList/index"
 
 function Businesses() {
     const [currentBus, setCurrentbus] = useState({});
-
-    console.log()
-
+    
+    const {id}= useParams();
     useEffect(() => {
-        loadBusiness();
+        loadBusiness(id);
     });
 
-    function loadBusiness(props) {
-        API.getBusiness(props.id)
+    function loadBusiness(id) {
+        API.getBusiness(id)
             .then(res => {
                 console.log(res.data)
                 setCurrentbus(res.data)
