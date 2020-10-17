@@ -7,7 +7,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vetDiscount", {
 
 const categorySeed = [
     {
-        categoryList: "Auto Care / Parts"
+        categoryList: "Auto Care and Parts"
     },
     {
         categoryList: "Auto Manufactures"

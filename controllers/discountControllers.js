@@ -21,5 +21,13 @@ module.exports = {
           .then((dbModel) => {
               return res.json(dbModel)
           })
+    },
+    findCategory: function(req, res) {
+        db.Discount
+          .find(req.query)
+          .where({ Category: req.params.Category })
+          .then((dbModel) => {
+              return res.json(dbModel)
+          })
     }
 }
