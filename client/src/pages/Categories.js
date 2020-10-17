@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Link } from "react";
 import API from "../utils/API";
 import { BusinessList, BusinessListItem } from "../components/BusinessList/index";
 
