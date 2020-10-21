@@ -1,27 +1,33 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { useParams } from "react-router-dom";
+import { useParams, Route } from "react-router-dom";
 import axios from "axios";
 import '../pages/Home.js'
+import QrGen from "../components/QRcode/index";
 
-let latitude;
-let longitude;
 
-function Businesses() {
+function Businesses(props) {
   const [currentBus, setCurrentbus] = useState();
+  const [currentDisc, setCurrentDisc] = useState();
+  const [latitude, setLatitude] = useState();
+  const [longitude, setLongitude] = useState();
   const { id } = useParams();
 
   useEffect(() => {
+    console.log(props)
     getPosition();
     loadBusiness(id);
-
-  });
+  },[currentBus]);
 
   function loadBusiness(id) {
     API.getBusiness(id)
       .then(res => {
         console.log(res.data.business)
         setCurrentbus(res.data.business)
+        setCurrentDisc(res.data.discount)
+        if(currentBus){
+          yelpBusiness(longitude, latitude, currentBus)
+        }
       })
   };
 
@@ -38,12 +44,12 @@ function Businesses() {
         "Longitude: " +
         position.coords.longitude
       );
-      latitude = position.coords.latitude;
-      longitude = position.coords.longitude;
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
     }
   }
 
-  function yelpBusiness(latitude, longitude) {
+  function yelpBusiness(latitude, longitude, currentBus) {
     const queryUrl = 'https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search';
 
     axios.get(queryUrl, {
@@ -64,16 +70,16 @@ function Businesses() {
       .catch(err => {
         console.log(err)
       })
-  }
-
-  yelpBusiness(latitude, longitude)
+}
 
   return (
     <div className='card'>
       <h2>{currentBus}</h2>
-      <h2>Map goes here</h2>
-      <button>Generate QR Code</button>
-
+      <h2>MAP</h2>
+      <QrGen currentDisc={currentDisc} />
+      {/* <Route exact path={`${props.match.url}/business/:id`}>
+        <SingleBusiness latitude={latitude} longitude={longitude} currentBus={currentBus}/>
+      </Route> */}
     </div>
   )
 
