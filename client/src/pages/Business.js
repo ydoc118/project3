@@ -26,7 +26,7 @@ function Businesses(props) {
         setCurrentbus(res.data.business)
         setCurrentDisc(res.data.discount)
         if(currentBus){
-          yelpBusiness(longitude, latitude, currentBus)
+          yelpBusiness(latitude, longitude, currentBus)
         }
       })
   };
