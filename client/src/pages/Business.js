@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { useParams, Route } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import '../pages/Home.js'
 import QrGen from "../components/QRcode/index";
@@ -77,9 +77,6 @@ function Businesses(props) {
       <h2>{currentBus}</h2>
       <h2>MAP</h2>
       <QrGen currentDisc={currentDisc} />
-      {/* <Route exact path={`${props.match.url}/business/:id`}>
-        <SingleBusiness latitude={latitude} longitude={longitude} currentBus={currentBus}/>
-      </Route> */}
     </div>
   )
 

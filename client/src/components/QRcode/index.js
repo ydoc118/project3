@@ -16,7 +16,7 @@ export default function QrGen({currentDisc}){
             width: 250
         }
     
-        QRCode.toDataURL("'" + {currentDisc} + "'", opts, function(err, url){
+        QRCode.toDataURL("'" + currentDisc + "'", opts, function(err, url){
             if (err) {console.log(err)}
             setQrImg(url)
         });
