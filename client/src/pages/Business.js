@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Children } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -8,7 +8,7 @@ let latitude;
 let longitude;
 
 function Businesses() {
-  const [currentBus, setCurrentbus] = useState({});
+  const [currentBus, setCurrentbus] = useState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -70,8 +70,7 @@ function Businesses() {
 
   return (
     <div className='card'>
-      <h2>BUSINESS PAGE</h2>
-      <h2>BUSINESS NAME</h2>
+      <h2>{currentBus}</h2>
       <h2>Map goes here</h2>
       <button>Generate QR Code</button>
 
