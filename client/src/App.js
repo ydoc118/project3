@@ -5,6 +5,7 @@ import Categories from "./pages/Categories";
 import Business from "./pages/Business"
 import Home from './pages/Home';
 import Sidebar from "./components/Sidebar";
+// import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Route path='/' exact component={Home} />
             <Route path='/categories' component={Categories} />
             <Route path='/business/:id' component={Business} />
+            {/* <Route path='./components/Footer' component = {Footer}/> */}
           </Switch>
         </Router>
 

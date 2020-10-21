@@ -1,42 +1,116 @@
-  .card {
-    background-size: cover;
-    background-position: center;
-    background-clip: content-box;
-    border: 6px solid white;
-    height: 400px;
-    width: 400px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    position: relative;
-    margin: 0 auto;
-    margin-top: 30px;
-  }
+body { 
+  /* background: #0f0f0f;  */
 
-  body {
-    background-color: black;
-  }
+  background-image: url('../components/Images/Military-Discount_2020.gif');
+-webkit-background-size: contain;
+
+-moz-background-size: contain;
+
+-o-background-size: contain;
+
+background-size: contain;
+object-fit: cover;
+}
+
+
+.card {
+  background-size: cover;
+  background-position: float-right;
+  background-clip: content-box;
+  border: 6px solid grey;
+box-sizing: border-box;
+object-fit: cover;
+  height: 2900px;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: relative;
+  margin: 0 auto;
+  margin-top: 0px;
+  max-width: 350px;
+  background-color: turquoise;
+}
+
+/* .root {
+  background-image: url('../components/Images/Military-Discount_2020.gif');
+  font-size: 180px;
+  position: absolute;
+  /* left: 1000%;
+  top: 50%; */
+/* } */ 
+
+/* .card .fa-spinner {
+  font-size: 180px;
+  position: absolute;
+  left: 1000%;
+  top: 50%;
+} */
+/* .Home,
+.categories,
+.business {
+display: flex;
+height: 90vh;
+align-items: center;
+justify-content: center;
+font-size: 3rem;
+background-image: url('../components/Images/Military-Discount_2020.gif');
+} */
+
+/* .head {
+display: flex; 
+flex-direction: column;
+justify-content: center;
+background-size: contain;
+background-repeat: no-repeat;
+height: 13rem;
+margin-top: 10px;
+} */ */
+
+
+
+/*login page*/
+
+
+
+.login-body {
+
+background-color: turquoise;
+
+}
+
+
+.login-img3-body{
+
+/* background: url('../components/Images/Military-Discount_2020.gif') ; */
+
+/* -webkit-background-size: contain;
+
+-moz-background-size: contain;
+
+-o-background-size: contain;
+
+background-size: contain;
+object-fit: cover; */
+  height: 300px;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: relative;
+  margin: 0 auto;
+  margin-top: 0px;
+  max-width: 310px;
+  background-color: turquoise;
+  overflow: hidden;
+border: 2px solid #B0B6BE;
+
+}
+
+/* .background {
+  -webkit-background-size: contain;
+
+  -moz-background-size: contain;
   
-  .card .fa-spinner {
-    font-size: 180px;
-    position: absolute;
-    left: 25%;
-    top: 25%;
-  }
-  .home,
-  .reports,
-  .products {
-    display: flex;
-    height: 90vh;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-  }
-  .head {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url('../components/Images/Military-Discount_2020.gif');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 500px;
-    margin-top: 1px;
-  }
+  -o-background-size: contain;
+  
+  background-size: contain;
+  object-fit: cover;
+} */
+
