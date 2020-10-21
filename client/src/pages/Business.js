@@ -9,6 +9,7 @@ import QrGen from "../components/QRcode/index";
 function Businesses(props) {
   const [currentBus, setCurrentbus] = useState();
   const [currentDisc, setCurrentDisc] = useState();
+  const [description, setDescription] = useState();
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
   const { id } = useParams();
@@ -25,6 +26,7 @@ function Businesses(props) {
         console.log(res.data.business)
         setCurrentbus(res.data.business)
         setCurrentDisc(res.data.discount)
+        setDescription(res.data.description)
         if(currentBus){
           yelpBusiness(latitude, longitude, currentBus)
         }
@@ -75,6 +77,7 @@ function Businesses(props) {
   return (
     <div className='card'>
       <h2>{currentBus}</h2>
+      <p>{description}</p>
       <h2>MAP</h2>
       <QrGen currentDisc={currentDisc} />
     </div>
