@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import '../pages/Home.js'
 import QrGen from "../components/QRcode/index";
+import Map1 from "../components/Map/Map";
 
 
 function Businesses(props) {
@@ -72,7 +73,7 @@ function Businesses(props) {
       .catch(err => {
         console.log(err)
       })
-}
+};
 
   return (
     <div className='card'>
@@ -80,6 +81,7 @@ function Businesses(props) {
       <p>{description}</p>
       <h2>MAP</h2>
       <QrGen currentDisc={currentDisc} />
+      <Map1 />
     </div>
   )
 
