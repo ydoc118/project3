@@ -3,7 +3,7 @@ import "../../pages/Business"
 
 
 export function BusinessList({ children }) {
-    return <p>{children}</p>
+    return <h3>{children}</h3>
 }
 
 export function BusinessListItem(props) {

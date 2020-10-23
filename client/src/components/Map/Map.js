@@ -1,50 +1,37 @@
-import React, { Component } from "react";
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import React, { useState, useEffect } from "react";
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import "../../pages/Business"
 
 const mapStyles = {
+    position: "relative",
     width: '100%',
     height: '100%',
     marginTop: '10%'
 };
 
-class Map1 extends Component {
-    constructor() {
-        super();
-        this.state = {
-            name: "React",
-            latitude: null,
-            longitude: null,
-        };
-    }
+function Map1({currentBus, businessLat, businessLong, google}) {
+    
 
-    position = async () => {
-        await navigator.geolocation.getCurrentPosition(
-            position => this.setState({
-                latitude: position.coords.latitude,
-                longitude: position.coords.longitude
-            }),
-            err => console.log(err)
-        );
-        console.log(this.state.latitude)
-    }
+    
+    console.log(typeof businessLat)
 
-    render() {
         return (
             <div>
                 <Map
-                    google={this.props.google}
+                    google={google}
                     zoom={10}
                     style={mapStyles}
+                    center={{lat: businessLat || 27.3364, lng: businessLong || -82.5307}}
                 >
+                    <Marker
+                        title={'The marker`s title will appear as a tooltip.'}
+                        name={currentBus}
+                        position={{lat: businessLat, lng: businessLong}} />
                 </Map>
-                <div>
-                    <button onClick={this.position} className='Filter'>MAP-BUTTON</button>
-                </div>
 
             </div>
         );
-    }
+    
 }
 export default GoogleApiWrapper({
 apiKey: 'AIzaSyDAFNp-kiQJKedi-e9ntOpVBihzfQXu7VM'

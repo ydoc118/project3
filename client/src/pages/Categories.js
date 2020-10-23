@@ -7,6 +7,7 @@ function Categories() {
     const [categories, setCategories] = useState([]);
     const [business, setBusiness] = useState([]);
     const [currentCat, setCurrentCat] = useState();
+    const [businessHTML, setBusinessHTML] = useState("none")
 
     useEffect(() => {
         loadCategories();
@@ -22,6 +23,7 @@ function Categories() {
     function handleClick(event) {
         event.preventDefault();
         setCurrentCat(event.target.innerHTML)
+        setBusinessHTML("block")
         API.getCategory(event.target.innerHTML)
             .then(res => {
                 setBusiness(res.data)
@@ -30,9 +32,9 @@ function Categories() {
 
 
     return (
-        <div>
+        <div className="container">
             <div className='card'>
-                <h1>Businesses List</h1>
+                <h1>Categories</h1>
                 <ul>
                     {categories.map(category => {
                         return (<h4 key={category._id}>
@@ -44,8 +46,8 @@ function Categories() {
                     })}
                 </ul>
             </div>
-            <div className='card'>
-                <h1>{currentCat} Businesses Details</h1>
+            <div style={{display: businessHTML}} className='card'>
+                <h1 style={{display: businessHTML}}>{currentCat} Businesses</h1>
                 <BusinessList>
                     {
                         business.map((business, i) => {

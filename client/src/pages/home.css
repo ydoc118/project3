@@ -1,20 +1,30 @@
-  .card {
-    background-size: cover;
-    background-position: right;
-    text-align: left;
-    text-indent: 8em;
+.head {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .hide-sm {
+    display: none;
+  }
+}
+
+.card {
+    text-align: center;
+    justify-content: center;
+    background-size: contain;
     background-clip: content-box;
     border: 6px solid white;
     height: auto;
     width: auto;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     position: relative;
-    margin-left: 18%;
     margin-top: 30px;
   }
 
   body {
-    background-color: wheat;
+    background-image: url("../components/Images/militaryImg.jpg");
+    background-repeat: no-repeat;
+    background-size: 900px 1600px;
   }
   
    .fa-spinner {
@@ -32,7 +42,7 @@
     justify-content: center;
     font-size: 3rem;
   }
-  .head {
+  /* .head {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,4 +51,4 @@
     background-repeat: no-repeat;
     height: 500px;
     margin-top: 1px;
-  }
+  } */
