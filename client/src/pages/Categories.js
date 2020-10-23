@@ -11,7 +11,7 @@ function Categories() {
 
     useEffect(() => {
         loadCategories();
-    });
+    },[]);
 
     function loadCategories() {
         API.getCategories(categories)
@@ -23,7 +23,7 @@ function Categories() {
     function handleClick(event) {
         event.preventDefault();
         setCurrentCat(event.target.innerHTML)
-        setBusinessHTML("block")
+        setBusinessHTML("flex")
         API.getCategory(event.target.innerHTML)
             .then(res => {
                 setBusiness(res.data)
@@ -37,11 +37,11 @@ function Categories() {
                 <h1>Categories</h1>
                 <ul>
                     {categories.map(category => {
-                        return (<h4 key={category._id}>
-                            <a href={"/categories/" + category._id} onClick={handleClick}>
-                                <strong>{category.categoryList}</strong>
+                        return (<h3  key={category._id}>
+                            <a className="btn btn-block btn-dark" href={"/categories/" + category._id} style={{fontWeight: "bold"}} onClick={handleClick}>
+                                {category.categoryList}
                             </a>
-                        </h4>
+                        </h3>
                         )
                     })}
                 </ul>
@@ -51,7 +51,7 @@ function Categories() {
                 <BusinessList>
                     {
                         business.map((business, i) => {
-                            return <BusinessListItem business={business.business} description={business.description} discount={business.discount} id={business._id} key={i} />
+                            return <BusinessListItem className="btn btn-block btn-outline-dark" business={business.business} description={business.description} discount={business.discount} id={business._id} key={i} />
                         })
                     }
                 </BusinessList>

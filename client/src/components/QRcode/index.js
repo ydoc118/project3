@@ -36,7 +36,7 @@ export default function QrGen({currentDisc}){
 
     return(
         <div>
-            <button onClick={buttonClick}>Generate QR Code</button>
+            <button className="btn btn-block btn-dark" onClick={buttonClick}>Generate QR Code</button>
             <img style={{display: imgStyle}} src={qrImg} id="qrCode"></img>
             <h1>{noDisc}</h1>
         </div>

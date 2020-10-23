@@ -83,11 +83,11 @@ function Businesses(props) {
   return (
     <div className="container">
       <div className="card">
-        <h2>{currentBus}</h2>
-        <p>{description}</p>
+        <h3 style={{fontWeight: "bold"}}>{currentBus}</h3>
+        <h4>{description}</h4>
         <QrGen currentDisc={currentDisc} />
       </div>
-        <Map1 businessLat={businessLat} businessLong={businessLong} currentBus={currentBus} />
+        <Map1 businessLat={businessLat} businessLong={businessLong} currentBus={currentBus} latitude={latitude} longitude={longitude}/>
     </div>
   )
 
