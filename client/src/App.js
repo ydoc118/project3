@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Categories from "./pages/Categories";
@@ -6,8 +6,7 @@ import Business from "./pages/Business"
 import Home from './pages/Home';
 import Sidebar from "./components/Sidebar";
 
-class App extends Component {
-  render() {
+function App() {
     return (
         <Router>
           <Sidebar />
@@ -19,7 +18,7 @@ class App extends Component {
         </Router>
 
     );
-  }
+  
 }
 
 export default App;

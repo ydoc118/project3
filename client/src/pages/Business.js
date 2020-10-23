@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Marker } from 'google-maps-react';
 import API from "../utils/API";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -13,6 +14,8 @@ function Businesses(props) {
   const [description, setDescription] = useState();
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
+  const [businessLat, setBusinessLat] = useState();
+  const [businessLong, setBusinessLong] = useState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -69,6 +72,8 @@ function Businesses(props) {
     })
       .then(res => {
         console.log(res)
+        setBusinessLat(res.data.businesses[0].coordinates.latitude)
+        setBusinessLong(res.data.businesses[0].coordinates.longitude)
       })
       .catch(err => {
         console.log(err)
@@ -76,12 +81,16 @@ function Businesses(props) {
 };
 
   return (
-    <div className='card'>
-      <h2>{currentBus}</h2>
-      <p>{description}</p>
-      <h2>MAP</h2>
-      <QrGen currentDisc={currentDisc} />
-      <Map1 />
+    <div className='container'>
+      <div className='card'>
+        <h2>{currentBus}</h2>
+        <p>{description}</p>
+        <h2>MAP</h2>
+        <QrGen currentDisc={currentDisc} />
+        <Map1 businessLat={businessLat} businessLong={businessLong} currentBus={currentBus}>
+          <Marker />
+        </Map1>
+      </div>
     </div>
   )
 
