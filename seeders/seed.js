@@ -170,7 +170,7 @@ const discountSeed = [
   },
   {
     Category: "Restaurants",
-    business: "Applebee’s",
+    business: "Applebees",
     description: "Discount varies per location, simply ask and have a valid military ID with you.",
     discount: ""
   },
