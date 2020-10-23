@@ -47,6 +47,13 @@
     justify-content: center;
     font-size: 3rem;
   }
+
+  .btn-dark {
+    background-color: #060b26;
+    border-color: #060b26;
+  }
+
+
   /* .head {
     display: flex;
     flex-direction: column;
