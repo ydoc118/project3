@@ -10,22 +10,24 @@ const mapStyles = {
 };
 
 function Map1({currentBus, businessLat, businessLong, google}) {
-    
 
-    
-    console.log(typeof businessLat)
-
+        useEffect(() => {
+            console.log(businessLong)
+        },[businessLong, businessLat])
+        
         return (
             <div>
                 <Map
                     google={google}
+                    className={"map"}
                     zoom={10}
                     style={mapStyles}
                     center={{lat: businessLat || 27.3364, lng: businessLong || -82.5307}}
                 >
                     <Marker
-                        title={'The marker`s title will appear as a tooltip.'}
-                        name={currentBus}
+                        onClick={() => window.open(`https://www.google.com/maps/search/${currentBus}/@${businessLat},${businessLong}`) }
+                        title={currentBus}
+                        text={"currentBus"}
                         position={{lat: businessLat, lng: businessLong}} />
                 </Map>
 

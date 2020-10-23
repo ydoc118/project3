@@ -28,7 +28,7 @@ function Businesses(props) {
     API.getBusiness(id)
       .then(res => {
         console.log(res.data.business)
-        setCurrentbus(res.data.business)
+        setCurrentbus((res.data.business))
         setCurrentDisc(res.data.discount)
         setDescription(res.data.description)
         if(currentBus){
@@ -71,9 +71,10 @@ function Businesses(props) {
       }
     })
       .then(res => {
-        console.log(res)
-        setBusinessLat(res.data.businesses[0].coordinates.latitude)
-        setBusinessLong(res.data.businesses[0].coordinates.longitude)
+        let yelpRes = res.data.businesses;
+        console.log(yelpRes)
+        setBusinessLat(yelpRes[0].coordinates.latitude)
+        setBusinessLong(yelpRes[0].coordinates.longitude)
       })
       .catch(err => {
         console.log(err)
@@ -85,7 +86,6 @@ function Businesses(props) {
       <div className='card'>
         <h2>{currentBus}</h2>
         <p>{description}</p>
-        <h2>MAP</h2>
         <QrGen currentDisc={currentDisc} />
         <Map1 businessLat={businessLat} businessLong={businessLong} currentBus={currentBus}>
           <Marker />
