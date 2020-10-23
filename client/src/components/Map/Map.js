@@ -2,36 +2,30 @@ import React, { useState, useEffect } from "react";
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import "../../pages/Business"
 
-const mapStyles = {
-    position: "relative",
-    width: '100%',
-    height: '100%',
-    marginTop: '10%'
+const containerStyle = {
+    position: "absolute",
+    height: "100%",
+    width: "100%"
 };
 
-function Map1({currentBus, businessLat, businessLong, google}) {
 
-        useEffect(() => {
-            console.log(businessLong)
-        },[businessLong, businessLat])
+function Map1({currentBus, businessLat, businessLong}) {
         
         return (
-            <div>
                 <Map
-                    google={google}
-                    className={"map"}
-                    zoom={10}
-                    style={mapStyles}
+                    google={window.google}
+                    zoom={14}
+                    containerStyle={{ top: "20px", width: '100%', height: '500px', position: 'relative' }}
                     center={{lat: businessLat || 27.3364, lng: businessLong || -82.5307}}
                 >
                     <Marker
                         onClick={() => window.open(`https://www.google.com/maps/search/${currentBus}/@${businessLat},${businessLong}`) }
                         title={currentBus}
-                        text={"currentBus"}
+                        label={currentBus}
                         position={{lat: businessLat, lng: businessLong}} />
                 </Map>
 
-            </div>
+            
         );
     
 }

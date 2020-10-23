@@ -46,7 +46,7 @@ function Categories() {
                     })}
                 </ul>
             </div>
-            <div style={{display: businessHTML}} className='card'>
+            <div style={{display: businessHTML}} className='card cardBottom'>
                 <h1 style={{display: businessHTML}}>{currentCat} Businesses</h1>
                 <BusinessList>
                     {

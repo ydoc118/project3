@@ -10,6 +10,7 @@
 
 .card {
     text-align: center;
+    align-items: center;
     justify-content: center;
     background-size: contain;
     background-clip: content-box;
@@ -19,6 +20,10 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     position: relative;
     margin-top: 30px;
+  }
+
+  .cardBottom {
+    margin-bottom: 30px;
   }
 
   body {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Marker } from 'google-maps-react';
 import API from "../utils/API";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -82,15 +81,13 @@ function Businesses(props) {
 };
 
   return (
-    <div className='container'>
-      <div className='card'>
+    <div className="container">
+      <div className="card">
         <h2>{currentBus}</h2>
         <p>{description}</p>
         <QrGen currentDisc={currentDisc} />
-        <Map1 businessLat={businessLat} businessLong={businessLong} currentBus={currentBus}>
-          <Marker />
-        </Map1>
       </div>
+        <Map1 businessLat={businessLat} businessLong={businessLong} currentBus={currentBus} />
     </div>
   )
 
