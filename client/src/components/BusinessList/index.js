@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import "../../pages/Business"
 
 
@@ -9,7 +10,7 @@ export function BusinessList({ children }) {
 export function BusinessListItem(props) {
     return(
         <p className="busButton">
-            <a className=" btn btn-block btn-dark" href={"/business/" + props.id}><strong>{props.business}</strong></a> 
+            <Link className=" btn btn-block btn-dark" to={"/business/" + props.id}><strong>{props.business}</strong></Link> 
         </p>
     )
 }

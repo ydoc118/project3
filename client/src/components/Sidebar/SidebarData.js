@@ -3,6 +3,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 
+
 export const SidebarData = [
   {
     title: 'Home',
@@ -12,7 +13,7 @@ export const SidebarData = [
   },
   {
     title: 'Log-in',
-    path: '/messages',
+    path: '/login',
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
@@ -20,6 +21,12 @@ export const SidebarData = [
     title: 'Categories',
     path: '/Categories',
     icon: <IoIcons.IoIosPaper />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Register',
+    path: '/register',
+    icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
   {

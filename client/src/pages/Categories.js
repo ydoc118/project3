@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import {Link} from "react-router-dom"
 import API from "../utils/API";
 import './Home.js'
 import { BusinessList, BusinessListItem } from "../components/BusinessList/index";
+import AuthContext from '../context/auth/authContext';
 
 function Categories() {
     const [categories, setCategories] = useState([]);
@@ -9,9 +11,20 @@ function Categories() {
     const [currentCat, setCurrentCat] = useState();
     const [businessHTML, setBusinessHTML] = useState("none")
 
+    const authContext = useContext(AuthContext);
+    const { isAuthenticated } = authContext;
+
     useEffect(() => {
-        loadCategories();
+        console.log(isAuthenticated)
+        if(isAuthenticated){
+            loadCategories();
+        }else notAuthenticated();
+        
     },[]);
+
+    function notAuthenticated() {
+        alert("You must be logged in to use the app")
+    }
 
     function loadCategories() {
         API.getCategories(categories)
@@ -38,9 +51,9 @@ function Categories() {
                 <ul>
                     {categories.map(category => {
                         return (<h3  key={category._id}>
-                            <a className="btn btn-block btn-dark" href={"/categories/" + category._id} style={{fontWeight: "bold"}} onClick={handleClick}>
+                            <Link className="btn btn-block btn-dark" to={"/categories/" + category._id} style={{fontWeight: "bold"}} onClick={handleClick}>
                                 {category.categoryList}
-                            </a>
+                            </Link>
                         </h3>
                         )
                     })}
