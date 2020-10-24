@@ -1,9 +1,14 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const db = require("../models/");
+const connectDB = require('../config/db');
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vetDiscount", {
-  useNewUrlParser: true
-});
+connectDB()
+
+
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vetDiscount", {
+//   useNewUrlParser: true
+// });
 
 const discountSeed = [
   {
@@ -176,7 +181,7 @@ const discountSeed = [
   },
   {
     Category: "Restaurants",
-    business: "Arby's",
+    business: "Arbys",
     description: "Discount varies per location, simply ask and have a valid military ID with you.",
     discount: ""
   },
