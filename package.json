@@ -13,7 +13,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
     "test": "npm run lint",
-    "lint": "eslint --quiet ."
+    "lint": "eslint --quiet "
   },
   "author": "",
   "license": "Apache2.0",
