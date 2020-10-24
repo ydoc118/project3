@@ -5,25 +5,30 @@ import './Home.js'
 import { BusinessList, BusinessListItem } from "../components/BusinessList/index";
 import AuthContext from '../context/auth/authContext';
 
-function Categories() {
+function Categories(props) {
     const [categories, setCategories] = useState([]);
     const [business, setBusiness] = useState([]);
     const [currentCat, setCurrentCat] = useState();
     const [businessHTML, setBusinessHTML] = useState("none")
+    const [userName, setUserName] = useState();
 
     const authContext = useContext(AuthContext);
-    const { isAuthenticated } = authContext;
+    const { isAuthenticated, user, loadUser } = authContext;
 
     useEffect(() => {
-        console.log(isAuthenticated)
         if(isAuthenticated){
+            loadUser()
             loadCategories();
+            if(user){
+                setUserName(user.name)
+            }
         }else notAuthenticated();
         
-    },[]);
+    },[user]);
 
     function notAuthenticated() {
         alert("You must be logged in to use the app")
+        props.history.push('/login');
     }
 
     function loadCategories() {
@@ -47,6 +52,7 @@ function Categories() {
     return (
         <div className="container">
             <div className='card'>
+                <h1 style={{textDecoration: "underline"}}>Welcome, {userName}!</h1>
                 <h1>Categories</h1>
                 <ul>
                     {categories.map(category => {

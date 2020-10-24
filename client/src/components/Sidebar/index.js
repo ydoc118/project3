@@ -47,7 +47,7 @@ function Sidebar() {
               );
             })}
             <li className="nav-text">
-              <Link onClick={onLogout} to='/'>
+              <Link onClick={onLogout} to='/start'>
                 <FaIcons.FaEnvelopeOpenText />
                 <span>Log-Out</span>
               </Link>
