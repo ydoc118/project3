@@ -3,8 +3,13 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+// const connectDB = require('./config/db');
 const mongoose = require("mongoose");
 const routes = require("./routes/api/discountRoute.js");
+
+
+// Connect Database
+// connectDB();
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -12,12 +17,17 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.json());
+app.use(express.json({ extended: false }));
 
 // app.use(passport.initialize()); 
 // app.use(passport.session()); 
 
 app.use(routes)
+// Define Routes
+app.use('/api/users', require('./routes/users'));
+app.use('/api/auth', require('./routes/auth'));
+
 
 
 // Send every request to the React app
@@ -27,7 +37,8 @@ app.get("*", function(req, res) {
 });
 
 // Connect to mongodb databases
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vetDiscount", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/vetDiscount', { useNewUrlParser: true, useUnifiedTopology: true })
+  //  "mongodb://localhost/project3", { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 app.listen(PORT, function() {
