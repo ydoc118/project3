@@ -15,7 +15,11 @@ function Categories(props) {
     const authContext = useContext(AuthContext);
     const { isAuthenticated, user, loadUser } = authContext;
 
+    const authContext = useContext(AuthContext);
+    const { isAuthenticated } = authContext;
+
     useEffect(() => {
+
         if(isAuthenticated){
             loadUser()
             loadCategories();
@@ -29,6 +33,11 @@ function Categories(props) {
     function notAuthenticated() {
         alert("You must be logged in to use the app")
         props.history.push('/login');
+    }
+
+
+    function notAuthenticated() {
+        alert("You must be logged in to use the app")
     }
 
     function loadCategories() {

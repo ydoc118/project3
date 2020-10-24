@@ -9,12 +9,14 @@ import AuthContext from '../context/auth/authContext';
 function Home() {
   
 
+
   return (
     <div className="container">
       <div className="startCard">
         <h1>Veteran Discount App</h1>
         <h3>Helping Veterans find the discounts they deserve</h3>
         <Link to="/register"className="btn btn-block btn-dark">Register</Link><Link to="/login" className="btn btn-block btn-dark">Login</Link>
+
 
       </div>
     </div>
