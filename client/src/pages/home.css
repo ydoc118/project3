@@ -8,62 +8,64 @@
   }
 }
 
+.startCard {
+  justify-content: center;
+  text-align: center;
+  background-size: contain;
+  background-clip: content-box;
+  border: 6px solid white;
+  height: auto;
+  width: auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: relative;
+  margin-top: 30px;
+}
+
 .card {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-size: contain;
-    background-clip: content-box;
-    border: 6px solid white;
-    height: auto;
-    width: auto;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    position: relative;
-    margin-top: 30px;
-  }
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-clip: content-box;
+  border: 6px solid white;
+  height: auto;
+  width: auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: relative;
+  margin-top: 30px;
+ }
 
-  .cardBottom {
-    margin-bottom: 30px;
-  }
+.cardBottom {
+  margin-bottom: 30px;
+}
 
-  body {
-    background-image: url("../components/Images/militaryImg.jpg");
-    background-repeat: no-repeat;
-    background-size: 900px 1600px;
-  }
-  
-   .fa-spinner {
-    font-size: 180px;
-    position: absolute;
-    left: 25%;
-    top: 25%;
-  }
-  .home,
-  .reports,
-  .products {
-    display: flex;
-    height: 90vh;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-  }
+body {
+  background-image: url("../components/Images/militaryImg.jpg");
+  background-repeat: no-repeat;
+  background-size: 900px 1600px;
+ }
+ 
+.fa-spinner {
+  font-size: 180px;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+}
 
-  .btn-dark {
-    background-color: #060b26;
-    border-color: #060b26;
-  }
+.home,
+.reports,
+.products {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
 
-
-  /* .head {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url('../components/Images/Military-Discount_2020.gif');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 500px;
-    margin-top: 1px;
-  } */
+.btn-dark {
+  background-color: #060b26;
+  border-color: #060b26;
+}
 
 
   * Forms */

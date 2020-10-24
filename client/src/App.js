@@ -27,7 +27,7 @@ class App extends Component {
           <Alerts />
           <Switch>
           <PrivateRoute exact path='/' component={Home} />
-            <Route path='/' exact component={Home} />
+            <Route path='/home' exact component={Home} />
             <Route path='/categories' component={Categories} />
             <Route path='/business/:id' component={Business} />
             <Route exact path='/register' component={Register} />

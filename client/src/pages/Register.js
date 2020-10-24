@@ -12,7 +12,8 @@ const Register = props => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push('/');
+      alert("You are already logged in!")
+      props.history.push('/login');
     }
 
     if (error === 'User already exists') {

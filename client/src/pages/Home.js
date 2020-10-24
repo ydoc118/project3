@@ -1,12 +1,4 @@
-// import React from 'react';
-import "./home.css";
-
-
-// import React from 'react';
-// import "./home.css";
-// import Footer from '../components/Footer'
-
-    
+import "./home.css";  
 import React, { Fragment, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -14,70 +6,52 @@ import AuthContext from '../context/auth/authContext';
 
 
 
-const Home = ({ title, icon }) => {
-  const authContext = useContext(AuthContext);
+function Home() {
   
 
-  const { isAuthenticated, logout, user, loadUser } = authContext;
-
-  useEffect(() => {
-    if(isAuthenticated){
-      loadUser();
-    }
-    // eslint-disable-next-line
-  }, []);
-
-  function homeScreen() {
-    
-  }
-
-  const onLogout = () => {
-    logout();
-  };
-
-  const authLinks = (
-    <Fragment>
-      <li>Hello {user && user.name}</li>
-      <li>
-        <a onClick={onLogout} href='#!'>
-          <i className='fas fa-sign-out-alt' />{' '}
-          <span className='hide-sm'>Logout</span>
-        </a>
-      </li>
-    </Fragment>
-  );
-
-  const guestLinks = (
-    <Fragment>
-      <li>
-        <Link to='./Register'>Register</Link>
-      </li>
-      <li>
-        <Link to='./login'>Login</Link>
-      </li>
-    </Fragment>
-  );
 
   return (
     <div className="container">
-      <div className="card">
+      <div className="startCard">
         <h1>Veteran Discount App</h1>
+        <h3>Helping Veterans find the discounts they deserve</h3>
+        <Link to="/register"className="btn btn-block btn-dark">Register</Link><Link to="/login" className="btn btn-block btn-dark">Login</Link>
+
+
       </div>
     </div>
   );
 };
 
-Home.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string
-};
-
-Home.defaultProps = {
-  title: 'VET-DIS',
-  icon: 'fas fa-id-card-alt'
-};
-
 export default Home;
+
+
+// const Home = ({ title, icon }) => {
+//   const authContext = useContext(AuthContext);
+//   const [userName, setUserName] = useState();
+  
+
+//   const { user, loadUser } = authContext;
+
+//   useEffect(() => {
+//     loadUser();
+//     if(user){
+//       setUserName(user.name)
+//     }
+//     // eslint-disable-next-line
+//   },[user]);
+
+//   return (
+//     <div className='container'>
+//       <div className="card">
+//         <h1>Veteran Discount App</h1>
+//         <h3>Welcome, {userName}!</h3>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
 
 
 
