@@ -21,9 +21,15 @@ const Home = ({ title, icon }) => {
   const { isAuthenticated, logout, user, loadUser } = authContext;
 
   useEffect(() => {
-    loadUser();
+    if(isAuthenticated){
+      loadUser();
+    }
     // eslint-disable-next-line
   }, []);
+
+  function homeScreen() {
+    
+  }
 
   const onLogout = () => {
     logout();
@@ -53,13 +59,10 @@ const Home = ({ title, icon }) => {
   );
 
   return (
-    <div className='navbar bg-primary'>
-      <h1>
-        <Link to='/'>
-          <i className={icon} /> {title}
-        </Link>
-      </h1>
-      <ul>{isAuthenticated ? authLinks : guestLinks}</ul>
+    <div className="container">
+      <div className="card">
+        <h1>Veteran Discount App</h1>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './style.css';
 import { IconContext } from 'react-icons';
+import AuthContext from '../../context/auth/authContext';
 
 function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+
+
+  const authContext = useContext(AuthContext);
+  const { logout } = authContext;
+
+  const onLogout = () => {
+    logout();
+  };
+
 
   return (
     <>
@@ -36,6 +46,12 @@ function Sidebar() {
                 </li>
               );
             })}
+            <li className="nav-text">
+              <Link onClick={onLogout} to='/'>
+                <FaIcons.FaEnvelopeOpenText />
+                <span>Log-Out</span>
+              </Link>
+            </li>
           </ul>
         </nav>
       </IconContext.Provider>

@@ -6,7 +6,7 @@ import Business from "./pages/Business"
 import Home from './pages/Home';
 import Sidebar from "./components/Sidebar";
 import Register from './pages/Register';
-import Login from './components/auth/Login';
+import Login from './pages/Login';
 import Alerts from './components/layout/Alerts';
 import PrivateRoute from './components/routing/PrivateRoute';
 import AuthState from './context/auth/AuthState';
