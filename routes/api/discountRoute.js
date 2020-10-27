@@ -14,4 +14,10 @@ router.route("/api/categories")
 router.route("/api/businesses/:Category")
     .get(discountController.findCategory)
 
+router.route("/api/vetusers")
+    .get(discountController.findUsers)
+
+router.route("/api/vetusers/:firstName/:lastName/:ssn")
+    .get(discountController.findOneUser)
+
 module.exports = router;

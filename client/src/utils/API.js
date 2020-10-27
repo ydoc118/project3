@@ -13,6 +13,12 @@ export default {
   getBusiness: function(id) {
     return axios.get("/api/businesses/Category/" + id)
   },
+  getUsers: function() {
+    return axios.get("/api/vetusers")
+  },
+  getOneUser: function(firstName, lastName, ssn) {
+    return axios.get("/api/vetusers/" + firstName + "/" + lastName + "/" + ssn)
+  }
 
 
  

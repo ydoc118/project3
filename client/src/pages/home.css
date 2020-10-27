@@ -8,7 +8,8 @@
   }
 }
 
-.startCard {
+/* .startCard {
+  background-color: white;
   justify-content: center;
   text-align: center;
   background-size: contain;
@@ -18,8 +19,10 @@
   width: auto;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   position: relative;
+  display: flex;
   margin-top: 30px;
-}
+} */
+
 
 .card {
   text-align: center;
@@ -64,7 +67,11 @@ body {
 
 .btn-dark {
   background-color: #060b26;
-  border-color: #060b26;
+  border-color: white;
+}
+
+.btn-dark:hover {
+  background-color: #1a83ff;
 }
 
 
@@ -90,7 +97,7 @@ textarea {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid green;
+  border: 1px solid black;
 }
 
 input[type='submit'],
@@ -100,7 +107,7 @@ button {
 
 .form-group {
   margin: 1.2rem 0;
-  color: green;
+  color: black;
   /* size: 436 x 77.97; */
 }
 
@@ -114,14 +121,14 @@ button {
   margin: 2rem auto;
   overflow: hidden;
   padding: 0 2rem;
-  color:green;
+  color:black;
 }
 
 .form-container h1,
 h2,
 h3 {
   text-align: center;
-  color:green;
+  color:black;
 }
 
 table th,

@@ -29,5 +29,21 @@ module.exports = {
           .then((dbModel) => {
               return res.json(dbModel)
           })
+    },
+    findUsers: function(req, res) {
+        db.Veteran
+          .find(req.query)
+          .then((dbModel) => {
+              return res.json(dbModel)
+          })
+    },
+    findOneUser: function(req, res) {
+        db.Veteran
+          .find(req.query)
+          .where({ firstName: req.params.firstName, lastName: req.params.lastName, ssn: req.params.ssn})
+          .then((dbModel) => {
+              return res.json(dbModel)
+          })
     }
+    
 }
