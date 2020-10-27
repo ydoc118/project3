@@ -1,14 +1,7 @@
-const mongoose = require("mongoose");
 const db = require("../models/");
 const connectDB = require('../config/db');
 
-connectDB()
-
-
-
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vetDiscount", {
-//   useNewUrlParser: true
-// });
+connectDB();
 
 const veteranSeed = [
     {

@@ -11,9 +11,6 @@ import Alerts from './components/layout/Alerts';
 import PrivateRoute from './components/routing/PrivateRoute';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
-// import Footer from './components/Footer';
-
-
 
 
 class App extends Component {
@@ -32,7 +29,6 @@ class App extends Component {
             <Route path='/business/:id' component={Business} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
-            {/* <Route path='./components/Footer' component = {Footer}/> */}
           </Switch>
           </Fragment>
         </Router>
@@ -44,32 +40,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// import React from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import "./App.css";
-// import Categories from "./pages/Categories";
-// import Business from "./pages/Business"
-// import Home from './pages/Home';
-// import Sidebar from "./components/Sidebar";
-
-
-// function App() {
-//     return (
-//         <Router>
-//           <Sidebar />
-//           <Switch>
-//             <Route path='/' exact component={Home} />
-//             <Route path='/categories' component={Categories} />
-//             <Route path='/business/:id' component={Business} />
-//           </Switch>
-//         </Router>
-
-//     );
-  
-// }
-
-// export default App;
-
-

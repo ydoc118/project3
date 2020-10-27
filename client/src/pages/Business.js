@@ -39,7 +39,6 @@ function Businesses(props) {
   function getPosition() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
-      //console.log(showPosition);
     }
     function showPosition(position) {
       console.log(
