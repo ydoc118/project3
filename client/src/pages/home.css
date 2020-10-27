@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-@media (max-width: 700px) {
-  .hide-sm {
-    display: none;
-  }
-}
-
 .card {
   text-align: center;
   align-items: center;
@@ -30,7 +24,15 @@ body {
   background-image: url("../components/Images/militaryImg.jpg");
   background-repeat: no-repeat;
   background-size: 900px 1600px;
- }
+}
+
+@media (max-width: 480px) {
+  body {
+      background-image: url("../components/Images/militaryImg.jpg");
+      background-repeat: no-repeat;
+      background-size: 400px 850px;
+  }
+}
  
 .fa-spinner {
   font-size: 180px;
