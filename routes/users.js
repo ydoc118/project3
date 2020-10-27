@@ -13,7 +13,13 @@ const User = require('../models/User');
 router.post(
   '/',
   [
-    check('name', 'Please add name')
+    check('firstName', 'Please add first name')
+      .not()
+      .isEmpty(),
+    check('lastName', 'Please add last name')
+      .not()
+      .isEmpty(),
+    check('ssnumber', 'SSN is required')
       .not()
       .isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
@@ -28,7 +34,7 @@ router.post(
       return res.status(400).json({errors: errors.array()});
     }
 
-    const {name, email, password} = req.body;
+    const {firstName, lastName, email, ssnumber, password} = req.body;
 
     try {
       let user = await User.findOne({email});
@@ -38,8 +44,10 @@ router.post(
       }
 
       user = new User({
-        name,
+        firstName,
+        lastName,
         email,
+        ssnumber,
         password,
       });
 

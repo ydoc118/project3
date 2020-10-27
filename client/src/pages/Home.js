@@ -1,8 +1,6 @@
 import "./home.css";  
-import React, { Fragment, useContext, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import AuthContext from '../context/auth/authContext';
 
 
 
@@ -12,13 +10,17 @@ function Home() {
 
   return (
     <div className="container">
-      <div className="startCard">
+      <div className="card">
         <h1>Veteran Discount App</h1>
         <h3>Helping Veterans find the discounts they deserve</h3>
-        <Link to="/register"className="btn btn-block btn-dark">Register</Link><Link to="/login" className="btn btn-block btn-dark">Login</Link>
 
-
+        <div style={{display: "flex"}}>
+          <Link to="/login" className="btn btn-block btn-dark">Login</Link>
+          <Link to="/register" className="btn btn-dark">Register</Link>
+        </div>
       </div>
+      
+      
     </div>
   );
 };

@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const mongoose = require("mongoose");
+const cors = require('cors');
 const connectDB = require('./config/db');
 const routes = require("./routes/api/discountRoute.js");
 // const routes = require ("./routes/users.js");
@@ -22,8 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// app.use(passport.initialize()); 
-// app.use(passport.session()); 
+app.use(cors()); 
 
 app.use(routes)
 // Define Routes

@@ -1,6 +1,8 @@
+import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../context/alert/alertContext';
 import AuthContext from '../context/auth/authContext';
+import API from '../utils/API';
 import './Home.js'
 
 const Register = props => {
@@ -9,10 +11,16 @@ const Register = props => {
 
   const { setAlert } = alertContext;
   const { register, error, clearErrors, isAuthenticated } = authContext;
+  const [userData, setUserData] = useState([]);
+  const [registerButton, setregisterButton] = useState("none")
+  const [veteranStatus, setVeteranStatus] = useState()
 
   useEffect(() => {
+    loadUsers();
+
+    console.log(veteranStatus)
+
     if (isAuthenticated) {
-      alert("You are already logged in!")
       props.history.push('/categories');
     }
 
@@ -24,26 +32,74 @@ const Register = props => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     ssnumber: '',
     password: '',
     password2: ''
   });
 
-  const { name, email, ssnumber, password, password2 } = user;
+  const { firstName, lastName, email, ssnumber, password, password2 } = user;
 
-  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
+  const onChange = e => {
+    
+    setUser({ ...user, [e.target.name]: e.target.value });
+  } 
 
-  const onSubmit = e => {
-    e.preventDefault();
-    if (name === '' || email === '' || ssnumber === '' || password === '') {
+  const loadUsers = () => {
+    API.getUsers()
+      .then(res => {
+        for(var i = 0; i <res.data.length; i++) {
+          setUserData(res.data[i])
+        }
+      })
+  }
+
+  
+
+  const onVerify = (e) => {
+    e.preventDefault()
+
+      API.getOneUser(firstName, lastName, ssnumber)
+      .then(res => {
+        console.log(res.data)
+        if(res.data[0] === undefined) {
+          setVeteranStatus(false)
+        }else {
+          setVeteranStatus(res.data[0].veteranStatus)
+          
+        }
+        
+    })
+  }
+
+  useEffect(() => {
+    console.log(veteranStatus)
+    if(veteranStatus === true){
+      setAlert("Veteran Status Verifed", "success")
+      setregisterButton("block")
+    }else if (veteranStatus === false) {
+      setAlert("NOT A VETERAN", "danger")
+      setregisterButton("none")
+      
+    } 
+  }, [veteranStatus])
+
+  const onSubmit = (e) => {
+      e.preventDefault();
+
+    if (firstName === '' || lastName === '' || email === '' || ssnumber === '' || password === '') {
       setAlert('Please enter all fields', 'danger');
     } else if (password !== password2) {
       setAlert('Passwords do not match', 'danger');
-    } else {
+    } else if(veteranStatus === false) {
+      setAlert("NOT A VETERAN", "danger")
+    }
+    else {
       register({
-        name,
+        firstName,
+        lastName,
         email,
         ssnumber,
         password
@@ -58,12 +114,23 @@ const Register = props => {
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='name'>Name</label>
+          <label htmlFor='name'>First Name</label>
           <input
-            id='name'
+            id='firstName'
             type='text'
-            name='name'
-            value={name}
+            name='firstName'
+            value={firstName}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='name'>Last Name</label>
+          <input
+            id='lastName'
+            type='text'
+            name='lastName'
+            value={lastName}
             onChange={onChange}
             required
           />
@@ -83,12 +150,12 @@ const Register = props => {
           <label htmlFor='ssnumber'>Social Security Number</label>
           <input
             id='ssnumber'
-            type='integer'
+            type='password'
             name='ssnumber'
             value={ssnumber}
             onChange={onChange}
             required
-            Length='9'
+            length='9'
           />
         </div>
         <div className='form-group'>
@@ -116,11 +183,18 @@ const Register = props => {
           />
         </div>
         <input
+          style={{display: registerButton}}
           type='submit'
           value='Register'
-          className='btn btn-primary btn-block'
+          className='btn btn-block btn-dark'
         />
       </form>
+      <input
+          type='button'
+          onClick={onVerify}
+          value='Verify'
+          className='btn btn-block btn-dark'
+        />
     </div>
   );
 };

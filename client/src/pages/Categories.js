@@ -22,7 +22,7 @@ function Categories(props) {
             loadUser()
             loadCategories();
             if(user){
-                setUserName(user.name)
+                setUserName(user.firstName)
             }
         }else notAuthenticated();
         
