@@ -27,6 +27,6 @@ function Map1({currentBus, businessLat, businessLong, latitude, longitude}) {
     
 }
 export default GoogleApiWrapper({
-apiKey: 'AIzaSyDAFNp-kiQJKedi-e9ntOpVBihzfQXu7VM'
+apiKey: process.env.REACT_APP_MAP_API_KEY
 })(Map1);
 

@@ -58,7 +58,7 @@ function Businesses(props) {
 
     axios.get(queryUrl, {
       headers: {
-        Authorization: `Bearer 9AvFmvbitzJpbSlJPaDKPmZbkrL3bKKfqklkwvjYCPZ1xXVwI76ygHd3MJeM9Lglb9kKYbcgfBYFyfN-YFpn6OfsxYKkAe-AP1do3P4Z35iCUh9QflOthO_BaQuLX3Yx`
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
       },
       params: {
         term: currentBus,
