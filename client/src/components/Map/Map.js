@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import "../../pages/Business"
 
 function Map1({currentBus, businessLat, businessLong, latitude, longitude}) {
-
-    console.log(latitude)
         
         return (
                 <Map
