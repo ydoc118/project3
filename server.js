@@ -6,8 +6,6 @@ const app = express();
 const cors = require('cors');
 const connectDB = require('./config/db');
 const routes = require("./routes/api/discountRoute.js");
-// const routes = require ("./routes/users.js");
-// const routes = require ("./routes/auth.js");
 
 
 // Connect Database
@@ -24,9 +22,9 @@ app.use(express.json());
 
 app.use(cors()); 
 
-app.use(routes)
 // Define Routes
-// app.use('/api/discountRoute', require ('./routes/api/discountRoute.js'));
+app.use(routes)
+
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
 
