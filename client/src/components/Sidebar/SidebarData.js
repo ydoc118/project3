@@ -28,11 +28,5 @@ export const SidebarData = [
     path: '/register',
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
-  },
-  {
-    title: 'Support',
-    path: '/support',
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: 'nav-text'
   }
 ];
